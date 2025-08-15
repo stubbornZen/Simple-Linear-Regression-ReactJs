@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://github.com/stubbornZen/Simple-Linear-Regression-ReactJs.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "dotenv": "^17.2.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import gradient_descent from "../math_function/gradient_descent";
 import calculateRSquared from "../math_function/calculateRSquared";
 
-
 /**
  * Custom hook to encapsulate model loading and training logic.
  * @param {string} dataUrl - URL of the JSON data.
@@ -11,7 +10,7 @@ import calculateRSquared from "../math_function/calculateRSquared";
 export default function useModelTraining(dataUrl) {
   // Default data URL if none is provided
   // This is the relative path from the hook file to the public directory where the JSON is located
-  const defaultDataUrl = "public/salary_data.json";
+  const defaultDataUrl = "src/data/salary_data.json";
 
   const [w, setW] = useState(0);
   const [b, setB] = useState(0);

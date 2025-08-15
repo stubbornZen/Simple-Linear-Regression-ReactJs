@@ -1,3 +1,7 @@
+# use this file if use see this error
+# nvm is not compatible with the "NPM_CONFIG_PREFIX" environment variable:    currently set to "~/.global_modules"
+# Run `unset NPM_CONFIG_PREFIX` to unset it. 
+# first
 # curl nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 

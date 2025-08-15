@@ -8,7 +8,7 @@ import ErrorMessage from "./ErrorMessage.jsx";
 
 export default function Home() {
   const { w, b, rSquared, isLoading, error } = useModelTraining(
-    "public/salary_data.json"
+    "src/data/salary_data.json"
   );
   const [yearsExperienceInput, setYearsExperienceInput] = useState("");
   const [predictedSalary, setPredictedSalary] = useState(null);
