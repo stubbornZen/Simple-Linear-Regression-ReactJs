@@ -10,7 +10,7 @@ import calculateRSquared from "../math_function/calculateRSquared";
 export default function useModelTraining(dataUrl) {
   // Default data URL if none is provided
   // This is the relative path from the hook file to the public directory where the JSON is located
-  const defaultDataUrl = "src/data/salary_data.json";
+  const defaultDataUrl = `${import.meta.env.BASE_URL}salary_data.json`;
 
   const [w, setW] = useState(0);
   const [b, setB] = useState(0);
