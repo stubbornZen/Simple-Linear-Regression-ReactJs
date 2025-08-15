@@ -4,10 +4,12 @@ import LoadingIndicator from "./Loading.jsx";
 import PredictionForm from "./PredictionForm.jsx";
 import PredictionResult from "./PredictionResult.jsx";
 import ModelParameters from "./ModelParameters.jsx";
+import ErrorMessage from "./ErrorMessage.jsx";
 
 export default function Home() {
-  const { w, b, rSquared, isLoading, error } =
-    useModelTraining("/salary_data.json");
+  const { w, b, rSquared, isLoading, error } = useModelTraining(
+    "public/salary_data.json"
+  );
   const [yearsExperienceInput, setYearsExperienceInput] = useState("");
   const [predictedSalary, setPredictedSalary] = useState(null);
 

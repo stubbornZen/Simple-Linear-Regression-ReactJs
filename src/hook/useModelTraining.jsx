@@ -9,6 +9,10 @@ import calculateRSquared from "../math_function/calculateRSquared";
  * @returns {{w: number, b: number, rSquared: number|null, isLoading: boolean, error: string|null}} - Model parameters, R-squared, loading state, and error.
  */
 export default function useModelTraining(dataUrl) {
+  // Default data URL if none is provided
+  // This is the relative path from the hook file to the public directory where the JSON is located
+  const defaultDataUrl = "public/salary_data.json";
+
   const [w, setW] = useState(0);
   const [b, setB] = useState(0);
   const [rSquared, setRSquared] = useState(null); // New state for R-squared
@@ -20,7 +24,8 @@ export default function useModelTraining(dataUrl) {
       try {
         setIsLoading(true);
         setError(null);
-        const response = await fetch(dataUrl);
+        // Use the provided dataUrl if available, otherwise use the default
+        const response = await fetch(dataUrl || defaultDataUrl);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -70,7 +75,7 @@ export default function useModelTraining(dataUrl) {
     };
 
     loadDataAndTrainModel();
-  }, [dataUrl]);
+  }, [dataUrl, defaultDataUrl]);
 
   return { w, b, rSquared, isLoading, error };
 }
